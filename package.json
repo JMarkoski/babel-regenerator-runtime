@@ -1,0 +1,31 @@
+{
+  "name": "babel-regenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build:all": "npm run clean && npm run build:corejs3 && npm run build:corejs2 && npm run build:nocorejs && npm run build:presetenv && npm run build:presetenvcorejs3 && npm run build:presetenvcorejs2",
+    "build:corejs3": "babel script.js --out-file ./dist/transpiled-corejs3.js --config-file=./babel-config/babel-config-corejs3.js",
+    "build:corejs2": "babel script.js --out-file ./dist/transpiled-corejs2.js --config-file=./babel-config/babel-config-corejs2.js",
+    "build:nocorejs": "babel script.js --out-file ./dist/transpiled-nocorejs.js --config-file=./babel-config/babel-config-no-corejs.js",
+    "build:presetenv": "babel script.js --out-file ./dist/transpiled-presetenv.js --config-file=./babel-config/babel-config-preset-env.js",
+    "build:presetenvcorejs3": "babel script.js --out-file ./dist/transpiled-presetenvcorejs3.js --config-file=./babel-config/babel-config-preset-env-corejs3.js",
+    "build:presetenvcorejs2": "babel script.js --out-file ./dist/transpiled-presetenvcorejs2.js --config-file=./babel-config/babel-config-preset-env-corejs2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
+    "@babel/runtime-corejs2": "^7.11.2",
+    "@babel/runtime-corejs3": "^7.11.2",
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2"
+  }
+}
