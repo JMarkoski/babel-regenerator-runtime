@@ -1,2 +1,4 @@
 dist
 node_modules
+babel-dist
+webpack-dist
